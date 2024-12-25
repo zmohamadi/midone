@@ -4,10 +4,8 @@ import { useFormElement } from './Element';
 import { useState, useEffect } from 'react';
 
 import dynamic from "next/dynamic";
-// import { CKEditor as CKEditorMain } from '@ckeditor/ckeditor5-react';
 const CKEditorMain = dynamic(() => import('@ckeditor/ckeditor5-react').then((mod) => mod.CKEditor), {ssr: false});
 import ClassicEditor from './ckeditorMin';
-// const ClassicEditor = dynamic(() => import('./ckeditorMin'));
 import { useConfig } from "@/lib/config";
 
 export const CKEditor = (props)=>{
@@ -143,9 +141,8 @@ export const CKEditor = (props)=>{
                 <input type="hidden" id={id} value={state.value} ref={Element.createRef(refItem)} />
                 <CKEditorMain
                     editor={ ClassicEditor }
-                    config={custom_config}
+                    config={ custom_config }
                     data={state.value}
-                    // onChange={ ( event ) => state.value = state.editor.data.get() }
                     onBlur={ ( event, editor ) => {
                         if(editor)
                         setState({...state, value: editor?.data.get()})

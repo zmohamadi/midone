@@ -7,6 +7,7 @@ export const useFormRefs = (otherItems={})=>{
     [component.state, component.setState] = useState({
             refs: useRef([]),
             errors: {},
+            status: "",
             info: {},
             ...otherItems
         });

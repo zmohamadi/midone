@@ -2,9 +2,9 @@
 
 export const Storage = {
     set: function(key, value) {
-        localStorage.setItem(key, JSON.stringify(value));
+        typeof window !== 'undefined' && window.localStorage.setItem(key, JSON.stringify(value));
     },
     get: function(key) {
-        return JSON.parse(localStorage.getItem(key));
+        return typeof window !== 'undefined' && JSON.parse(window.localStorage.getItem(key));
     }
 };

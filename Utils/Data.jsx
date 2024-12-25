@@ -1,5 +1,5 @@
 'use client';
 
-import {Data, DataObj, useData} from "@/lib/data";
+import {Data, useData} from "@/lib/data";
 // import {Data, DataObj, useData} from "@/lib/dataFetch";
-export {Data, DataObj, useData};
+export {Data, useData};

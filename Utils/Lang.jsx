@@ -22,6 +22,11 @@ function WordLang(word, items = null){
     
     let param = word.split('.');
     let result = lang;
+    if(param.length == 1){
+      param[1] = param[0];
+      param[0] = "public";
+    }
+
     param.forEach((item)=>{
       if(result != null && result != undefined && result != '')
         result = result[item];

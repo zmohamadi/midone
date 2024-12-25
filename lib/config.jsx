@@ -22,17 +22,8 @@ export const config = {
     larasadmin: ()=>{
         return process.env.NEXT_PUBLIC_sadmin_LARA_URL;
     },
-    laraProfile: () => {
-        return process.env.NEXT_PUBLIC_PROFILE_LARA_URL;
-    },
-    nextProfile: () => {
-        return process.env.NEXT_PUBLIC_PROFILE_NEXT_URL;
-    },
     assets: () => {
         return process.env.NEXT_PUBLIC_SITE_ASSETS_URL;
-    },
-    assetsProfile: () => {
-        return process.env.NEXT_PUBLIC_PROFILE_ASSETS_URL;
     },
     media: () => {
         return process.env.NEXT_PUBLIC_MEDIA_URL;
@@ -51,16 +42,13 @@ export const useConfig = ()=>{
         laraDomain: config.host(),
         laraAdmin: config.lUrl(),
         larasadmin: config.larasadmin(),
-        laraProfile: config.laraProfile(),
 
         nextDomain: config.front(),
         nextAdmin: config.mastership(),
         nextsadmin: config.nextsadmin(),
-        nextProfile: config.nextProfile()+"/"+local,
 
         mediaPath: config.media(),
         assetsPath: config.assets(),
-        assetsProfile: config.assetsProfile(),
         defaultLogo: config.defaultLogo(),
 
         adminMenuType: config.adminMenuType(),

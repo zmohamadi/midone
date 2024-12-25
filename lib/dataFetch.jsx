@@ -174,7 +174,7 @@ let Data = {
             })
             .catch(error => {
                 // element.parentElement.innerHTML = `Error: ${error}`;
-                console.error('There was an error!', error);
+                //console.error('There was an error!', error);
                 if (error.response) {
                     let title = '', message = '';
                     switch(error.response.status){

@@ -12,16 +12,21 @@ const translate = (str, items = [], langStore) => {
         });
         return results.join(" ")  
     }else{
+      // console.log(langStore, str);
         return wordTranslate(str, items, langStore);
     }
 }
 
 function wordTranslate(word, items = null, langStore){
-    let lang = {};
     const {langs} = langStore;
       
     let param = word.split('.');
-    let result = lang;
+    if(param.length == 1){
+      param[1] = param[0];
+      param[0] = "public";
+    }
+    
+    let result = langs;
     param.forEach((item)=>{
         if(result != null && result != undefined && result != "")
             result = result[item];
@@ -78,7 +83,6 @@ export function dir(local){
     return "rtl";
   }
 }
-
 
 export function useLang() {
   const langStore = useSelector(state=>state.lang);

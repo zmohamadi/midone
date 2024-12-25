@@ -19,7 +19,7 @@ export function DateTimePicker(props){
 
 
     return (
-        <div className={className?className:" mb-3 col-span-6"} >
+        <div className={className?className:" mb-3 col-span-12 md:col-span-6 "} >
             <label htmlFor={id} className="form-label font-bold">{label} {requiredDiv}</label>
             <input 
                 className = {inputClassName ? inputClassName+" form-control " : " form-control "}
@@ -29,7 +29,7 @@ export function DateTimePicker(props){
                 key = {'input-'+rand}
                 type = {"datetime-local"}
                 data-type = {"datetime-local"}
-                placeholder="yyyy-mm-dd"
+                placeholder="yyyy/mm/dd"
                 defaultValue = {state.value}
                 disabled = {disabled==true?true:false}
                 onChange={function(e){
